@@ -1,0 +1,570 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    padding-bottom: 60px; /* Ensure this matches the height of .bottom-navbar */
+    padding-top: 14%;
+}
+
+/* Header Styling */
+.header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* box-sizing: border-box; */
+  justify-content: flex-start;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container {
+  /* position: relative; */
+  background-color: #1e0027;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(136, 3, 219, 0.713);
+  width: 100%;
+  /* max-width: 500px; */
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 10px;
+  min-height: 100px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #e0b3ff;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #d1a3ff;
+}
+
+select {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #4b006e;
+  color: #e0b3ff;
+  text-align-last: center;
+  font-size: large;
+}
+
+select option {
+  text-align: left;
+  font-size: medium;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6a0080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 5px;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.button:hover {
+  background-color: #4a004d;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 20px;
+  background-color: #8a00b0;
+  border-radius: 4px;
+  transition: width 0.3s;
+}
+
+.progress-text {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #d1a3ff;
+}
+
+.key-container {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+
+  /* scrollbar-width: none;
+  -ms-overflow-style: none; */
+}
+
+/* .key-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+} */
+
+.key-container h2 {
+  color: #d1a3ff;
+}
+
+.key-container h3 {
+  color: #d1a3ff;
+}
+
+h3 {
+  /* margin-bottom: 20px; */
+  color: #e0b3ff;
+}
+
+.keys-list {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.key-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #2c003e;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  word-wrap: break-word;
+}
+
+.key-item input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  color: #e0b3ff;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.key-number {
+  display: inline-block;
+  text-align: center;
+  width: 40px;
+  padding: 10px 10px;
+  background-color: #6a0080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.key-item button {
+  margin-left: 10px;
+  background-color: #6a0080;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.key-item button:hover {
+  background-color: #4a004d;
+}
+
+.hidden {
+  display: none;
+}
+
+.copy-status {
+  margin-top: 10px;
+  color: #d1a3ff;
+  font-weight: bold;
+}
+
+.footer-button {
+  margin-top: 20px;
+  background-color: #6a0080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.language-selector {
+  position: relative;
+  top: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#languageSelect {
+  background-color: #4b006e;
+  color: #e0b3ff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: large;
+}
+
+.referral-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+.referral-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.referral-container p {
+  color: #666;
+  margin-bottom: 20px;
+}
+.referral-link {
+  display: inline-block;
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.referral-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.referral-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  flex: 1 1 calc(50% - 10px); /* Adjust width for 2x2 layout */
+}
+.referral-buttons .copy-link {
+  background-color: #f5f5f5;
+}
+.referral-buttons .twitter {
+  background-color: #000000;
+  color: white;
+}
+.referral-buttons .whatsapp {
+  background-color: #128c7e;
+  color: white;
+}
+.referral-buttons .facebook {
+  background-color: #1877f2;
+  color: white;
+}
+.referral-buttons .telegram {
+  background-color: #0088cc;
+  color: white;
+}
+.referral-buttons .share {
+  background-color: #f5f5f5;
+}
+.referral-container .note {
+  color: red;
+  font-size: 12px;
+}
+
+/* Media query for small screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  label,
+  .button {
+    font-size: 14px;
+  }
+
+  select,
+  .button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .footer-button {
+    font-size: 14px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .main-container {
+    width: 100%;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .language-selector {
+    top: 10px;
+    right: 10px;
+  }
+  .referral-buttons button {
+    flex: 1 1 calc(50% - 10px); /* Adjust width for 2x2 layout on small screens */
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-description {
+    margin-bottom: 0.5rem;
+}
+
+.footer-info {
+    margin-bottom: 0.5rem;
+}
+
+.footer-link {
+    color: #333;
+    text-decoration: none;
+    padding: 0 0.5rem;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-right {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+}
+
+#details-section {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    max-width: 80%;
+    width: 100%;
+    
+    margin-top: 10px;
+    padding: 30px;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+#details-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#details-section h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #555;
+}
+
+#details-section p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+}
+
+#details-section ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+#details-section ol {
+    margin-left: 20px;
+}
+
+#details-section dl {
+    margin-left: 20px;
+}
+
+#details-section dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#details-section dd {
+    margin-bottom: 10px;
+}
+
+#details-section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#details-section a:hover {
+    text-decoration: underline;
+}
+
+.latest-updates {
+  background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    max-width: 90%;
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 10%;
+    flex-direction: column;
+}
+
+.latest-updates h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #007bff
+}
+
+.latest-updates .update-item {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+.latest-updates .update-item img {
+    max-width: 100px;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 8px
+}
+
+.latest-updates .update-item .description {
+    max-width: calc(100% - 115px)
+}
+
+.latest-updates .update-item .description p {
+    margin: 0;
+    font-size: 14px;
+    color: #555
+}
+
+.latest-updates .update-item .description a {
+    color: #007bff;
+    text-decoration: none
+}
+
+.latest-updates .update-item .description a:hover {
+    text-decoration: underline
+}
+
+/* Add this to your existing CSS file */
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Example background color */
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+
+
+
+
+.nav-item {
+    display: flex;
+    flex-direction: column; /* Stack icon and label vertically */
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    margin-bottom: 5px; /* Space between icon and label */
+}
+
+.label {
+    font-size: 0.9rem; /* Smaller font size for the label */
+}
+
+.nav-item:hover {
+    background-color: #555; /* Background color on hover */
+    border-radius: 4px; /* Rounded corners on hover */
+    padding: 5px 10px; /* Padding to increase click area */
+}
+
